@@ -1,0 +1,229 @@
+<?php
+// Inclure le contrôleur pour récupérer les recettes
+include_once 'C:/xampp/htdocs/projet/controller/RecetteC.php';
+
+// Créer une instance du contrôleur
+$controller = new RecetteController();
+
+// Récupérer toutes les recettes
+$recettes = $controller->AfficherRecettes(); // Méthode pour récupérer toutes les recettes
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+    <!-- Site Metas -->
+    <title>tuni-flavor _Project web </title>
+    <meta name="keywords" content="TUNI-FLAVOR est une plateforme en ligne pour découvrir la cuisine tunisienne. Elle propose des recettes traditionnelles, des vidéos de chefs professionnels, et des recommandations de restaurants. Pour un tarif abordable, les utilisateurs peuvent apprendre à cuisiner des plats authentiques grâce à des tutoriels vidéo, tout en explorant le patrimoine culinaire de la Tunisie.">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- color -->
+    <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
+
+    <!-- Modernizer -->
+    <script src="js/modernizer.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div id="site-header">
+        <header id="header" class="header-block-top">
+            <div class="container">
+                <div class="row">
+                    <div class="main-menu">
+                        <!-- navbar -->
+                        <nav class="navbar navbar-default" id="mainNav">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="logo">
+                                    <a class="navbar-brand js-scroll-trigger logo-header" href="#">
+                                        <img src="images/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="active"><a href="#banner">Home</a></li>
+                                    <li><a href="#about">About us</a></li>
+                                    <li><a href="#Recettes">Recettes</a></li>
+                                    
+                                    <li><a href="#Guide">Guide</a></li>
+                                    <li><a href="#evenement">Evenement</a></li>
+                                    <li><a href="#reservation">reservation</a></li>
+                                    <li><a href="#calendrier">Calendrier</a></li>
+                                    <li><a href="#footer">Contact us</a></li>
+                                    <li class="siteheader_right_ul_li">
+                        
+                                        <div class="menu-wrapper --end">
+                                            <div id="gtm-header-bouton-connexion-utilisateur-non-connecte" class="pellet-primary not-connected">
+                                                <a id="js-btn-connect" href="/communaute/login.aspx" aria-label="Connexion" rel="external nofollow">
+                                                    <div class="pellet_round"></div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18.3 20.1">
+                                                        <path class="user-shape" fill="#333" d="M0,20.1h18.3v-4.6c0-2-7-2.9-7-3.7v-1.6c0-1.2,2.3-2.1,2.3-5.5c0.1-2.5-1.8-4.6-4.3-4.7 c0,0-0.1,0-0.1,0C6.7,0,4.8,2,4.8,4.5c0,0,0,0.1,0,0.1C4.8,8.1,7,8.9,7,10.2c0,2,0,0.9,0,1.5c0,0.8-7,1.5-7,3.8L0,20.1z"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+                                        <script src="https://accounts.google.com/gsi/client" async="" defer=""></script>
+                                        <script src="https://cdn.cuisineaz.com/caz/dist/user-login.js?ver=20241113101414" type="text/javascript"></script>
+                                        
+                                        
+                                                        </li>
+                                </ul>
+                            </div>
+                            <!-- end nav-collapse -->
+                        </nav>
+                        <!-- end navbar -->
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container-fluid -->
+        </header>
+        <!-- end header -->
+    </div>
+
+    <!-- Banner Section -->
+    <div id="banner" class="banner full-screen-mode parallax">
+        <div class="container pr">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="banner-static">
+                    <div class="banner-text">
+                        <div class="banner-cell">
+                            <h1>TUNI-FLAVOUR <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Authentique:Gourmand:Inspirant" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>
+                            <h2>Les secrets de la cuisine tunisienne dévoilés</h2>
+                            <p>Une référence incontournable pour tous les amoureux de la cuisine tunisienne</p>
+                            <a href="#about">
+                                <div class="mouse"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Recettes -->
+    <div id="Recettes" class="recettes-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <h2 class="block-title text-center">Nos Recettes</h2>
+                <p class="title-caption text-center">Découvrez nos recettes traditionnelles tunisiennes</p>
+                <div class="recettes-container">
+                    <?php
+                    // Exemple de recette ajoutée directement dans le code
+                    // Titre, catégorie, image et instructions de la recette
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 recette-card">
+                       <div class="recipe-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjA7pMriRpP90nn7r0tFJ5YDwSa_Bno63v0A&s" alt="Couscous Tunisien">;
+                           <div class="recipe-card-body">
+                                <h3 class="recipe-title">Couscous Tunisien</h3>
+                               <p class="recipe-category">Plat Principal</p>
+                               <p class="recipe-instructions">Un délicieux couscous aux légumes et à la viande, parfumé aux épices tunisiennes. Un plat riche en saveurs et en couleurs.</p>;
+                               <a href="#Recette-CouscousTunisien" class="recipe-button">Voir plus</a>
+                            </div>;
+                      </div>;
+                    </div>;
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Détails de la Recette -->
+    <div id="Recette-CouscousTunisien" class="recette-detail">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Détails de la Recette : Couscous Tunisien</h2>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjA7pMriRpP90nn7r0tFJ5YDwSa_Bno63v0A&s" alt="Couscous Tunisien" class="img-responsive">
+                    <h4>Catégorie : Plat Principal</h4>
+                    <p><strong>Ingrédients :</strong></p>
+                    <ul>
+                        <li>1 kg de couscous</li>
+                        <li>500g de viande d'agneau ou de poulet</li>
+                        <li>3 carottes</li>
+                        <li>2 courgettes</li>
+                        <li>1 oignon</li>
+                        <li>Épices (ras-el-hanout, curcuma, cumin)</li>
+                        <li>Huile d'olive, sel, poivre</li>
+                    </ul>
+                    <p><strong>Instructions :</strong></p>
+                    <p>
+                        1. Faire revenir la viande dans l'huile d'olive avec l'oignon haché et les épices.<br>
+                        2. Ajouter les légumes coupés en morceaux, couvrir d'eau et laisser cuire à feu moyen pendant 45 minutes.<br>
+                        3. Pendant ce temps, cuire le couscous à la vapeur.<br>
+                        4. Servir le couscous avec la viande et les légumes. Garnir de bouillon et de sauce.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-box pad-top-70">
+        <div class="container">
+            <div class="row">
+                <div class="footer-in-main">
+                    <div class="footer-logo">
+                        <div class="text-center">
+                            <img src="images/logo.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-box-a">
+                            <h3>About Us</h3>
+                            <p>Aenean commodo ligula eget dolor aenean massa. Cum sociis nat penatibu set magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-box-c">
+                            <h3>Contact Us</h3>
+                            <p><i class="fa fa-map-signs"></i> 6 E Esplanade, St Albans VIC 3021, Australia</p>
+                            <p><i class="fa fa-mobile"></i> +91 80005 89080</p>
+                            <p><i class="fa fa-envelope"></i> <a href="#">support@foodfunday.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="scrollup" style="display: none;">Scroll</a>
+
+    <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
